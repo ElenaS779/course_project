@@ -1,7 +1,6 @@
 package utils;
 
 import com.codeborne.selenide.Selenide;
-import org.openqa.selenium.JavascriptExecutor;
 
 public class Helper {
     public static void scroll(String elementId) {

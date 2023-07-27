@@ -1,4 +1,5 @@
 package ui.steps;
+
 import com.codeborne.selenide.Condition;
 import ui.elements.LoginElements;
 import utils.EnvProperties;
@@ -8,7 +9,8 @@ import java.lang.reflect.InvocationTargetException;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.open;
-public class LoginPage extends LoginElements{
+
+public class LoginPage extends LoginElements {
     public LoginPage openLoginPage() {
         open(EnvProperties.BASE_URL);
         return new LoginPage();

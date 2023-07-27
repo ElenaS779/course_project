@@ -13,24 +13,26 @@ import java.text.ParseException;
 
 public class AddTaskTests {
     static final long currMs = System.currentTimeMillis();
-    private static final String USERNAME = (String.format("Maria567%d",currMs));
-    private static final String PASSWORD = (String.format("maria564%d",currMs));
+    private static final String USERNAME = (String.format("Maria567%d", currMs));
+    private static final String PASSWORD = (String.format("maria564%d", currMs));
     UserApiSteps userApiSteps = new UserApiSteps();
     private String userId;
     private static final String PROJECT_NAME = "New project create test for task";
-    private static final String PROJECT_IDENTIFIER = (String.format("test%d",currMs));
+    private static final String PROJECT_IDENTIFIER = (String.format("test%d", currMs));
     private static final String DESCRIPTION = "creating test project for task test";
     ProjectApiSteps projectApiSteps = new ProjectApiSteps();
     private String projectId;
     private static final String TITLE = "New task create";
     private static final String DESC_TITLE = "New task create via ui test";
+
     @BeforeMethod
-    public void prepareDataForTest() throws ParseException{
+    public void prepareDataForTest() throws ParseException {
         userId = userApiSteps.createUser(USERNAME, PASSWORD);
         System.out.println(userId);
-        projectId = projectApiSteps.createProject(PROJECT_NAME,PROJECT_IDENTIFIER,DESCRIPTION,Integer.parseInt(userId));
+        projectId = projectApiSteps.createProject(PROJECT_NAME, PROJECT_IDENTIFIER, DESCRIPTION, Integer.parseInt(userId));
         System.out.println(projectId);
     }
+
     @Test
     @Description("Test: add new task to the project")
     public void addNewTaskToProject() throws InvocationTargetException, InstantiationException, IllegalAccessException {
@@ -41,15 +43,14 @@ public class AddTaskTests {
         new TaskPage()
                 .openNewTaskCreatePage();
         new AddNewTask()
-                .addNewTask(TITLE,DESC_TITLE)
+                .addNewTask(TITLE, DESC_TITLE)
                 .assertCreateTask();
 
     }
+
     @AfterMethod(alwaysRun = true)
     public void removeDataAfterTest() {
-        projectApiSteps.deleteProject(Integer.parseInt(projectId),USERNAME,PASSWORD);
+        projectApiSteps.deleteProject(Integer.parseInt(projectId), USERNAME, PASSWORD);
         userApiSteps.deleteUser(Integer.parseInt(userId));
     }
-
-
 }

@@ -13,11 +13,13 @@ public class UserTests extends BaseApiSteps {
     private static final String PASSWORD = "tamarin545";
     UserApiSteps userApiSteps = new UserApiSteps();
     private Integer userId;
+
     @BeforeTest
     public void setup() {
 
         Init();
     }
+
     @Test
     @Description("create a new user")
     public void createUser() {
@@ -29,9 +31,9 @@ public class UserTests extends BaseApiSteps {
 
     @Test
     @Description("delete user")
-    public void deleteUser(){
-       Boolean resultValue = userApiSteps.deleteUser(userId);
-       Assert.assertTrue(resultValue,"Delete failed");
+    public void deleteUser() {
+        Boolean resultValue = userApiSteps.deleteUser(userId);
+        Assert.assertTrue(resultValue, "Delete failed");
 
     }
 }

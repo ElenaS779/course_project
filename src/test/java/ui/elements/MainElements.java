@@ -8,7 +8,8 @@ public class MainElements {
     public SelenideElement mainSection() {
         return $("#main");
     }
-    public SelenideElement newProject(){
+
+    public SelenideElement newProject() {
         return $x("//*[@id=\"main\"]/div/ul/li[1]/a");
     }
 

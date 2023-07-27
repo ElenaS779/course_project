@@ -5,7 +5,6 @@ import api.models.args.BodyArgs;
 import api.models.project.CreateProject;
 import api.models.project.DeleteProject;
 import io.restassured.response.Response;
-import utils.EnvProperties;
 import java.text.ParseException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -37,7 +36,6 @@ public class ProjectApiSteps extends BaseApiSteps {
         Result result = response.as(Result.class);
         return result.getResult().toString();
     }
-
 
     public boolean deleteProject(Integer projectId, String userName, String password){
         BodyArgs body = BodyArgs.builder().

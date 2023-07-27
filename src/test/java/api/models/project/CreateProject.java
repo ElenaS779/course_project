@@ -14,7 +14,7 @@ public class CreateProject {
     private String name; //required
     private String description;
     private Integer owner_id;
-    private String identifier;// (alphanumeric string, optional)
+    private String identifier;
     private String start_date;
     private String end_date;
 

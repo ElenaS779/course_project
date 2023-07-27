@@ -1,6 +1,5 @@
 package ui.steps;
 
-import com.codeborne.selenide.Condition;
 import ui.elements.TaskElements;
 import utils.Helper;
 
@@ -17,6 +16,7 @@ public class AddCommentsToTask extends TaskElements {
         saveButton().shouldBe(visible).click();
         return this;
     }
+
     public AddCommentsToTask assertAddComment(String commentText) {
         new TaskElements().commentTextElement(commentText)
                 .shouldBe(visible);

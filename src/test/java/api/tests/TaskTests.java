@@ -14,6 +14,7 @@ public class TaskTests extends BaseApiSteps {
     private Integer taskId;
 
     TaskApiSteps taskApiSteps = new TaskApiSteps();
+
     @BeforeTest
     public void setup() {
         Init();
@@ -27,10 +28,11 @@ public class TaskTests extends BaseApiSteps {
         Assert.assertTrue(StringUtils.isNumeric(resultValue));
         taskId = Integer.parseInt(resultValue);
     }
+
     @Test
     @Description("delete task")
-    public void deleteTask(){
+    public void deleteTask() {
         Boolean resultValue = taskApiSteps.deleteTask(taskId);
-        Assert.assertTrue(resultValue,"Delete failed");
+        Assert.assertTrue(resultValue, "Delete failed");
     }
 }

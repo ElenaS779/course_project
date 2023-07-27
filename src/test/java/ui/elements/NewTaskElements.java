@@ -11,12 +11,15 @@ public class NewTaskElements {
     public SelenideElement newTaskPage() {
         return $(By.className("task-form-container"));
     }
+
     public SelenideElement descriptionTask() {
         return $("#form-title");
     }
+
     public SelenideElement titleTask() {
         return $("[name='description']");
     }
+
     public SelenideElement saveButton() {
 
         return $x("//button[@type='submit']");

@@ -8,6 +8,5 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class DeleteProject {
-
     private Integer project_id;
 }
