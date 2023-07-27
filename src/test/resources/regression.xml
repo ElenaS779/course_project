@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="All_Tests" parallel="methods" thread-count="5">
+    <test name="Regression test">
+        <classes>
+            <class name="api.tests.ProjectTests"/>
+            <class name="api.tests.TaskTests"/>
+            <class name="api.tests.UserTests"/>
+            <class name="ui.tests.LoginTests"/>
+        </classes>
+
+    </test>
+</suite>

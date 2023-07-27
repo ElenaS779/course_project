@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="UI_regression" parallel="methods" thread-count="5">
+    <groups>
+        <run>
+            <include name="SettersTest"/>
+            <include name="GettersTest"/>
+        </run>
+    </groups>
+    <test name="UI_test">
+        <classes>
+            <class name="ui.tests.LoginTests"/>
+
+        </classes>
+    </test>
+</suite>
